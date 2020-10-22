@@ -5,13 +5,13 @@ require "sorbet-runtime"
 
 require "packwerk/deprecated_references"
 require "packwerk/reference"
-require "packwerk/reference_lister"
+require "packwerk/reference_lister_interface"
 require "packwerk/violation_type"
 
 module Packwerk
   class UpdatingDeprecatedReferences
     extend T::Sig
-    include ReferenceLister
+    include ReferenceListerInterface
 
     def initialize(root_path, deprecated_references = {})
       @root_path = root_path

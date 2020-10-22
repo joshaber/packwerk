@@ -7,7 +7,7 @@ require "packwerk/reference"
 require "packwerk/violation_type"
 
 module Packwerk
-  module ReferenceLister
+  module ReferenceListerInterface
     extend T::Sig
     extend T::Helpers
 

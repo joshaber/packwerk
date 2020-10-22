@@ -5,13 +5,13 @@ require "sorbet-runtime"
 require "yaml"
 
 require "packwerk/reference"
-require "packwerk/reference_lister"
+require "packwerk/reference_lister_interface"
 require "packwerk/violation_type"
 
 module Packwerk
   class DeprecatedReferences
     extend T::Sig
-    include ReferenceLister
+    include ReferenceListerInterface
 
     def initialize(package, filepath)
       @package = package

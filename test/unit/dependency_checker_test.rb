@@ -6,7 +6,7 @@ require "test_helper"
 module Packwerk
   class DependencyCheckerTest < Minitest::Test
     class CheckingDeprecatedReferencesStub
-      include ReferenceLister
+      include ReferenceListerInterface
 
       def listed?(_references, violation_type:)
         violation_type == ViolationType::Dependency

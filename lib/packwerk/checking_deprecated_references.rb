@@ -3,12 +3,12 @@
 
 require "sorbet-runtime"
 
-require "packwerk/reference_lister"
+require "packwerk/reference_lister_interface"
 
 module Packwerk
   class CheckingDeprecatedReferences
     extend T::Sig
-    include ReferenceLister
+    include ReferenceListerInterface
 
     def initialize(root_path)
       @root_path = root_path
