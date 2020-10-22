@@ -8,7 +8,7 @@ module Packwerk
   class ConfigurationTest < Minitest::Test
     test ".from_path raises ArgumentError if path does not exist" do
       File.expects(:exist?).with("foo").returns(false)
-      error = assert_raises ArgumentError do
+      error = assert_raises(ArgumentError) do
         Configuration.from_path("foo")
       end
 
