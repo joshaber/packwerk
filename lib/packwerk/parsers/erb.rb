@@ -31,6 +31,9 @@ module Packwerk
       rescue Parser::SyntaxError => e
         result = ParseResult.new(file: file_path, message: "Syntax error: #{e}")
         raise Parsers::ParseError, result
+      rescue => e
+        result = ParseResult.new(file: file_path, message: "Syntax error: #{e}")
+        raise Parsers::ParseError, result
       end
 
       private
