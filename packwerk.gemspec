@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables << "packwerk"
 
-  puts "!!! #{__dir__} - #{Dir.chdir(__dir__)}"
+  puts "!!! dir: #{__dir__}"
   spec.files = Dir.chdir(__dir__) do
     %x(git ls-files -z).split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
